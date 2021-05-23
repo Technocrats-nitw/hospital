@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:hospital_commercial/tabscreen1.dart';
+import 'package:hospital_commercial/admin.dart';
 
 void main() {
   runApp(MyApp());
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         //textTheme: Theme.of(context).textTheme.apply(displayColor: kTextColor),
       ),
-      home: Pages(),
+      home: admin(),
       /*routes: {
         '/DocInfo': (context) => DocInfoPage(),
       },*/
@@ -54,6 +55,7 @@ class _PagesState extends State<Pages> {
         children: <Widget>[
           TabScreen1(),
           TabScreen1(),
+          TabScreen1(),
         ],
         onPageChanged: (int index) {
           setState(() {
@@ -67,9 +69,9 @@ class _PagesState extends State<Pages> {
             Icon(Icons.medical_services_outlined,
                 size: 20, color: Colors.black),
             Icon(Icons.maps_home_work_outlined, size: 20, color: Colors.black),
-            /*
             Icon(Icons.medical_services_outlined,
                 size: 20, color: Colors.black),
+            /*
             Icon(Icons.account_circle_outlined, size: 20, color: Colors.black),
             */
           ],
