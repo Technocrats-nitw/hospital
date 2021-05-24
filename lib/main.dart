@@ -68,7 +68,7 @@ class _PagesState extends State<Pages> {
           items: <Widget>[
             Icon(Icons.medical_services_outlined,
                 size: 20, color: Colors.black),
-            Icon(Icons.maps_home_work_outlined, size: 20, color: Colors.black),
+            Icon(Icons.map_sharp, size: 20, color: Colors.black),
             Icon(Icons.medical_services_outlined,
                 size: 20, color: Colors.black),
             /*

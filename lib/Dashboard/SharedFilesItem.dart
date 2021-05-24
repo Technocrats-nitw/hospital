@@ -4,15 +4,11 @@ import 'package:google_fonts/google_fonts.dart';
 class SharedFilesItem extends StatefulWidget {
   final String sharedFileName;
   final Color color;
-  final String members;
-  final String et;
   final String fileSize;
 
   SharedFilesItem({
     required this.color,
-    required this.et,
     required this.fileSize,
-    required this.members,
     required this.sharedFileName,
   });
 
@@ -92,28 +88,6 @@ class _SharedFilesItemState extends State<SharedFilesItem> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 30.0),
-                        child: Text(
-                          widget.members,
-                          style: GoogleFonts.quicksand(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 11.0,
-                            color: Colors.black45,
-                          ),
-                        ),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 30.0),
-                        child: Text(
-                          widget.et,
-                          style: GoogleFonts.quicksand(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 11.0,
-                            color: Colors.black45,
-                          ),
-                        ),
-                      ),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 30.0),
                         child: Text(

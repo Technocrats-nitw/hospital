@@ -5,9 +5,8 @@ National Institute of Technology Warangal
 */
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:technocrats/screens/acc_ui/healthreport.dart';
-import 'package:technocrats/constants.dart';
-import 'package:technocrats/widgets/custom_clipper.dart';
+import 'package:hospital_commercial/constants.dart';
+import 'package:hospital_commercial/widgets/custom_clipper.dart';
 
 class CardMain extends StatelessWidget {
   final ImageProvider image;

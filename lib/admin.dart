@@ -7,16 +7,20 @@ class admin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Hospital Admin'),
+      ),
       body: Container(
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        child: Stack(
-          children: [
-            NavigationBar(),
-            DashBoard(),
-            //CalendarSpace(),
-          ],
-        ),
+        child: DashBoard(),
+        // Stack(
+        //  children: [
+        //NavigationBar(),
+//DashBoard(),
+        //CalendarSpace(),
+        //   ],
+        // ),
       ),
     );
   }

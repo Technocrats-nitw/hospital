@@ -7,7 +7,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hospital_commercial/constants.dart';
 import 'package:hospital_commercial/widgets/custom_clipper.dart';
-import 'package:hospical_commercial/url_launcher.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CardSection extends StatelessWidget {
   final String title;
@@ -16,6 +17,7 @@ class CardSection extends StatelessWidget {
   final String time;
   final ImageProvider image;
   final String link;
+  final Color color;
 
   CardSection(
       {Key? key,
@@ -24,6 +26,7 @@ class CardSection extends StatelessWidget {
       required this.unit,
       required this.time,
       required this.image,
+      required this.color,
       required this.link})
       : super(key: key);
 
@@ -32,104 +35,111 @@ class CardSection extends StatelessWidget {
     return Align(
       alignment: Alignment.topLeft,
       child: SingleChildScrollView(
-        child: Container(
-          margin: const EdgeInsets.only(right: 15.0),
-          width: 240,
-          decoration: new BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(10.0)),
-            shape: BoxShape.rectangle,
-            color: Colors.white,
-          ),
-          child: Stack(
-            clipBehavior: Clip.hardEdge,
-            children: <Widget>[
-              Positioned(
-                child: ClipPath(
-                  clipper: MyCustomClipper(clipType: ClipType.semiCircle),
-                  child: Container(
-                    decoration: new BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      color: Constants.lightBlue.withOpacity(0.1),
+        child: Center(
+          child: Container(
+            margin: const EdgeInsets.only(bottom: 20),
+            width: 270,
+            decoration: new BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(10.0)),
+              shape: BoxShape.rectangle,
+              color: Colors.white60,
+              border: Border.all(
+                color: color,
+                width: 3,
+              ),
+            ),
+            child: Stack(
+              clipBehavior: Clip.hardEdge,
+              children: <Widget>[
+                Positioned(
+                  child: ClipPath(
+                    clipper: MyCustomClipper(clipType: ClipType.semiCircle),
+                    child: Container(
+                      decoration: new BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        color: Colors.white.withOpacity(0.1),
+                      ),
+                      height: 120,
+                      width: 120,
                     ),
-                    height: 120,
-                    width: 120,
                   ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(20.0),
-                child: Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Image(
-                            image: image,
-                            width: 24,
-                            height: 24,
-                            color: Theme.of(context).accentColor,
-                          ),
-                          Text(
-                            time,
-                            style: TextStyle(
-                                fontSize: 15, color: Constants.textPrimary),
-                          ),
-                        ],
-                      ),
-                      SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Expanded(
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: <Widget>[
-                                Text(
-                                  title,
-                                  overflow: TextOverflow.ellipsis,
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      color: Constants.textPrimary),
-                                ),
-                                SizedBox(height: 5),
-                                Text(
-                                  '$value $unit',
-                                  style: TextStyle(
-                                      fontSize: 15,
-                                      color: Constants.textPrimary),
-                                ),
-                              ],
+                Padding(
+                  padding: EdgeInsets.all(20.0),
+                  child: Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Image(
+                              image: image,
+                              width: 24,
+                              height: 24,
+                              color: color,
                             ),
-                          ),
-                          SizedBox(width: 10),
-                          InkWell(
-                              child: Container(
-                                decoration: new BoxDecoration(
-                                  borderRadius:
-                                      BorderRadius.all(Radius.circular(10.0)),
-                                  shape: BoxShape.rectangle,
-                                  color: Color(0xFFF0F4F8),
-                                ),
-                                width: 44,
-                                height: 44,
-                                child: Center(
-                                  child: Icon(
-                                    Icons.add_shopping_cart,
-                                    color: Theme.of(context).accentColor,
+                            Text(
+                              time,
+                              style: GoogleFonts.quicksand(
+                                  fontSize: 13, color: Colors.black),
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Expanded(
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: <Widget>[
+                                  Text(
+                                    title,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: GoogleFonts.quicksand(
+                                        fontSize: 14.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: color),
+                                  ),
+                                  SizedBox(height: 5),
+                                  Text(
+                                    '$value $unit',
+                                    style: GoogleFonts.quicksand(
+                                      fontSize: 10,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: 10),
+                            InkWell(
+                                child: Container(
+                                  decoration: new BoxDecoration(
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10.0)),
+                                    shape: BoxShape.rectangle,
+                                    color: Color(0xFFF0F4F8),
+                                  ),
+                                  width: 44,
+                                  height: 44,
+                                  child: Center(
+                                    child: Icon(
+                                      Icons.add_shopping_cart,
+                                      color: color,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              onTap: () => launch(link)),
-                        ],
-                      ),
-                    ],
+                                onTap: () => launch(link)),
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),

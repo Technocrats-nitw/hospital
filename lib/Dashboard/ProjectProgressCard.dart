@@ -48,7 +48,7 @@ class _ProjectProgressCardState extends State<ProjectProgressCard> {
                 spreadRadius: 5.0,
               ),
             ]),
-        child: Center(
+        child: Expanded(
           child: Column(
             children: [
               SizedBox(
@@ -109,7 +109,7 @@ class _ProjectProgressCardState extends State<ProjectProgressCard> {
                   ),
                   Container(
                     child: Text(
-                      '5 members',
+                      '10 members',
                       style: GoogleFonts.quicksand(
                         fontWeight: FontWeight.w500,
                         fontSize: 10.0,
@@ -141,7 +141,7 @@ class _ProjectProgressCardState extends State<ProjectProgressCard> {
                   ),
                   Container(
                     child: Text(
-                      '15 Nov 2019',
+                      '15 Nov 2021',
                       style: GoogleFonts.quicksand(
                         fontWeight: FontWeight.w500,
                         fontSize: 10.0,

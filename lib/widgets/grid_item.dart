@@ -4,7 +4,7 @@ Team : Technocrats
 National Institute of Technology Warangal
 */
 import 'package:flutter/material.dart';
-import 'package:technocrats/constants.dart';
+import 'package:hospital_commercial/constants.dart';
 
 class GridItem extends StatelessWidget {
   final String status;

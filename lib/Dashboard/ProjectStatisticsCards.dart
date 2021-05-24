@@ -5,25 +5,31 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 class ProjectStatisticsCards extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        ProjectStatisticsCard(
-          count: '125',
-          name: 'All finished projects',
-          descriptions: '2 projects out of time',
-          progress: 0.75,
-          progressString: '75%',
-          color: Color(0xffFAAA1E),
-        ),
-        ProjectStatisticsCard(
-          color: Color(0xff6C6CE5),
-          count: '1105',
-          name: 'Customer interest',
-          descriptions: '+ 576 new clients',
-          progress: 0.68,
-          progressString: '68%',
-        ),
-      ],
+    return Container(
+      margin: EdgeInsets.only(top: 5.0),
+      height: 120.0,
+      child: ListView(
+        scrollDirection: Axis.horizontal,
+        children: <Widget>[
+          SizedBox(width: 10),
+          ProjectStatisticsCard(
+            count: '125',
+            name: 'All finished projects',
+            descriptions: '2 projects out of time',
+            progress: 0.75,
+            progressString: '75%',
+            color: Color(0xffFAAA1E),
+          ),
+          ProjectStatisticsCard(
+            color: Color(0xff6C6CE5),
+            count: '1105',
+            name: 'Patient turnout',
+            descriptions: '+ 576 new visitors',
+            progress: 0.68,
+            progressString: '68%',
+          ),
+        ],
+      ),
     );
   }
 }
@@ -49,7 +55,7 @@ class ProjectStatisticsCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        margin: EdgeInsets.only(left: 40.0, right: 20.0),
+        margin: EdgeInsets.only(bottom: 10.0, left: 20.0, right: 20.0),
         padding: EdgeInsets.symmetric(horizontal: 20.0),
         height: 85.0,
         decoration: BoxDecoration(
@@ -93,6 +99,7 @@ class ProjectStatisticsCard extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(width: 8),
             CircularPercentIndicator(
               radius: 55.0,
               lineWidth: 4.5,
